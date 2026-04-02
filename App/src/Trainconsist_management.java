@@ -3,6 +3,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,38 +24,46 @@ public class Trainconsist_management {
     }
 
 
-    // UC7: Sort Bogies by Capacity using a custom Comparator
-    public void runUC7Operations() {
 
+    // UC4: Positional operations (using LinkedList to behave like your requested output)
+    public void runUC4Operations() {
+        System.out.println("UC4 Maintain Ordered Bogie Consist");
 
-        // We need to add "General" for this UC according to your prompt
-        capacityMap.put("General", 90);
+        // Using a LinkedList to easily add to the middle and remove ends
+        LinkedList<String> positionConsist = new LinkedList<>();
+        positionConsist.add("Engine");
+        positionConsist.add("Sleeper");
+        positionConsist.add("AC");
+        positionConsist.add("Cargo");
+        positionConsist.add("Guard");
 
-        System.out.println("Before Sorting:");
-        System.out.println("Sleeper -> 72\nAC Chair -> 56\nFirst Class -> 24\nGeneral -> 90");
+        System.out.println("Initial Train Consist:");
+        System.out.println(positionConsist);
 
-        // Convert map entries to a list for sorting
-        List<Map.Entry<String, Integer>> list = new ArrayList<>(capacityMap.entrySet());
+        // Inserting 'Pantry Car' at index 2
+        positionConsist.add(2, "Pantry Car");
+        System.out.println("After Inserting 'Pantry Car' at position 2:");
+        System.out.println(positionConsist);
 
-        // Sort the list by capacity value (ascending)
-        list.sort(Comparator.comparing(Map.Entry::getValue));
+        // Removing the First and Last Bogies
+        positionConsist.removeFirst(); // Removes Engine
+        positionConsist.removeLast();  // Removes Guard
 
-        System.out.println("\nAfter Sorting by Capacity:");
-        for (Map.Entry<String, Integer> entry : list) {
-            // Skips 'Cargo' since it wasn't in your UC7 target output list
-            if (!entry.getKey().equals("Cargo")) {
-                System.out.println(entry.getKey() + " -> " + entry.getValue());
-            }
-        }
+        System.out.println("After Removing First and Last Bogie:");
+        System.out.println(positionConsist);
 
-        System.out.println("UC7 sorting completed....");
+        System.out.println("UC4 ordered consist operations completed...\n");
     }
+
+
+
 
     public static void main(String[] args) {
         Trainconsist_management app = new Trainconsist_management();
 
-        // Running all required test cases
+        // Running all 6 required use cases in logical order
 
-        app.runUC7Operations();
+        app.runUC4Operations(); // Added UC4 here!
+
     }
 }
