@@ -1,15 +1,15 @@
 ******
 ======================================================
-Train-consist-management-app-UC7-Sort Bogies by Capacity (Comparator)
+Train-consist-management-app-UC4- Maintain Ordered Bogie IDs (TreeSet & SortedSet)
 ======================================================
-goal:Sort passenger bogies based on their seating capacity using a custom Comparator.
-
+goal:Goal
+Ensure no duplicate bogie IDs are added to the train.
 Flow:
-User creates passenger bogie objects.
-Bogies are stored in a List.
-System applies a Comparator to sort by capacity.
-Sorted bogies are displayed in order.
-Program continues.
+User adds bogie IDs
+System inserts into HashSet
+Duplicates are ignored
+Unique IDs are displayed.
+
 
 
 
