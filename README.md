@@ -1,16 +1,15 @@
 ******
 ======================================================
-Train-consist-management-app-UC6-Map Bogie to Capacity (HashMap)
+Train-consist-management-app-UC7-Sort Bogies by Capacity (Comparator)
 ======================================================
-goal:Associate each bogie with its seating or load capacity using a key–value mapping structure.
-
+goal:Sort passenger bogies based on their seating capacity using a custom Comparator.
 
 Flow:
-User creates a bogie-capacity mapping.
-System stores bogie names as keys and capacities as values.
-Entries are inserted into a HashMap.
-System iterates through the map.
-Capacity details are displayed for each bogie.
+User creates passenger bogie objects.
+Bogies are stored in a List.
+System applies a Comparator to sort by capacity.
+Sorted bogies are displayed in order.
 Program continues.
+
 
 
