@@ -1,15 +1,10 @@
 ******
 ======================================================
-Train-consist-management-app-UC2-Add Passenger Bogies
+Train-consist-management-app-UC5- Preserve Insertion Order of Bogies (LinkedHashSet)
 ======================================================
-goal:Allow dynamic insertion and removal of passenger bogies using ArrayList.
-
+goal:Maintain insertion order while enforcing uniqueness.
 
 Flow:
-
-1.User runs program
-2.Passenger bogies are added
-3.Bogies are displayed
-4.A bogie is removed
-5.Existence is checked
-6.Program continues
+User adds bogies
+LinkedHashSet stores them
+Formation is printed in original order
