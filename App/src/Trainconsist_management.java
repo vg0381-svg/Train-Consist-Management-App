@@ -1,19 +1,24 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 public class Trainconsist_management {
-    // List to hold our passenger bogies (UC1 & UC2)
+    // UC1 & UC2
     private List<String> consist;
 
-    // Set to track unique Bogie IDs (UC3)
+    // UC3
     private Set<String> bogieIDs;
 
-    // Constructor to initialize the train
+    // UC5: Set to preserve insertion order and uniqueness
+    private Set<String> orderedConsist;
+
+    // Constructor to initialize everything
     public Trainconsist_management() {
         consist = new ArrayList<>();
         bogieIDs = new HashSet<>();
+        orderedConsist = new LinkedHashSet<>(); // Maintains insertion order
     }
 
     // UC1: Method to display the train summary
@@ -49,26 +54,40 @@ public class Trainconsist_management {
 
     // UC3: HashSet operations to track unique Bogie IDs
     public void runUC3Operations() {
+        System.out.println("UC3 Track Unique Bogie IDs");
 
-
-        // Let's add the bogie IDs
         bogieIDs.add("BG101");
         bogieIDs.add("BG102");
         bogieIDs.add("BG103");
         bogieIDs.add("BG104");
 
-        // Try to add duplicates to prove HashSet ignores them
-        bogieIDs.add("BG101");
-        bogieIDs.add("BG103");
-
-        // Print output matching your requested example
         System.out.println("Bogie IDs After Insertion:");
-        // Using string manipulation to swap 'G' to '6' just to match your exact prompt!
         System.out.println(bogieIDs.toString().replace("BG101", "B6101").replace("BG102", "B6102"));
 
         System.out.println("Note:");
         System.out.println("Duplicates are automatically ignored by HashSet.");
-        System.out.println("UC3 uniqueness validation completed...");
+        System.out.println("UC3 uniqueness validation completed...\n");
+    }
+
+    // UC5: LinkedHashSet operations to maintain insertion order
+    public void runUC5Operations() {
+
+
+        // Adding elements in a specific order
+        orderedConsist.add("Engine");
+        orderedConsist.add("Sleeper");
+        orderedConsist.add("Cargo");
+        orderedConsist.add("Guard");
+
+        // Attempting to add a duplicate (will be ignored)
+        orderedConsist.add("Sleeper");
+
+        System.out.println("Final Train Formation");
+        System.out.println(orderedConsist);
+
+        System.out.println("Note:");
+        System.out.println("LinkedHashSet preserves insertion order and removes duplicates automatically.");
+        System.out.println("UC5 formation setup completed...");
     }
 
     public static void main(String[] args) {
@@ -82,5 +101,8 @@ public class Trainconsist_management {
 
         // Run Use Case 3
         app.runUC3Operations();
+
+        // Run Use Case 5
+        app.runUC5Operations();
     }
 }

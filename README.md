@@ -1,14 +1,10 @@
 ******
 ======================================================
-Train-consist-management-app-UC3-Track Unique BogieIDs
+Train-consist-management-app-UC5- Preserve Insertion Order of Bogies (LinkedHashSet)
 ======================================================
-goal:Ensure no duplicate bogie IDs are added to the train.
-
-
+goal:Maintain insertion order while enforcing uniqueness.
 
 Flow:
-User adds bogie IDs
-System inserts into HashSet
-Duplicates are ignored
-Unique IDs are displayed.
-
+User adds bogies
+LinkedHashSet stores them
+Formation is printed in original order
