@@ -1,10 +1,16 @@
 ******
 ======================================================
-Train-consist-management-app-UC5- Preserve Insertion Order of Bogies (LinkedHashSet)
+Train-consist-management-app-UC6-Map Bogie to Capacity (HashMap)
 ======================================================
-goal:Maintain insertion order while enforcing uniqueness.
+goal:Associate each bogie with its seating or load capacity using a key–value mapping structure.
+
 
 Flow:
-User adds bogies
-LinkedHashSet stores them
-Formation is printed in original order
+User creates a bogie-capacity mapping.
+System stores bogie names as keys and capacities as values.
+Entries are inserted into a HashMap.
+System iterates through the map.
+Capacity details are displayed for each bogie.
+Program continues.
+
+
